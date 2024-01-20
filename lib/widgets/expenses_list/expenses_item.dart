@@ -24,12 +24,11 @@ class ExpenseItem extends StatelessWidget {
                   const Spacer(), // fill all the space between 2 widgets in row/column
                   Row(
                     children: [
-                      //Text(expense.category.name),
-                      const Icon(Icons.alarm),
+                      Icon(categoryIcons[expense.category]),
                       const SizedBox(
                         width: 8,
                       ),
-                      Text(expense.date.toString()),
+                      Text(expense.formatedDate),
                     ],
                   ),
                 ],
