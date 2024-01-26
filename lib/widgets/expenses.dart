@@ -5,7 +5,7 @@ import 'package:expense_tracker/models/expense.dart';
 
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
-  
+
   @override
   State<Expenses> createState() => _ExpensesState();
 }
@@ -34,9 +34,16 @@ class _ExpensesState extends State<Expenses> {
     );
   }
 
-  void _addExpense(Expense expense){
+  void _addExpense(Expense expense) {
     setState(() {
       _registredExpenses.add(expense);
+    });
+  }
+
+  void _removeExpense(Expense expense) {
+    setState(() {
+      _registredExpenses.remove(expense);
+      
     });
   }
 
@@ -55,7 +62,11 @@ class _ExpensesState extends State<Expenses> {
       body: Column(
         children: [
           const Text('chart'),
-          Expanded(child: ExpensesList(expenses: _registredExpenses)),
+          Expanded(
+              child: ExpensesList(
+            expenses: _registredExpenses,
+            onRemoveExpense: _removeExpense,
+          )),
         ],
       ),
     );
