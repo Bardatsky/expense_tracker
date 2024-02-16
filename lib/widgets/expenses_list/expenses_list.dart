@@ -20,7 +20,7 @@ class ExpensesList extends StatelessWidget {
           key: ValueKey(expenses[index]),
           background: Container(
             color: Theme.of(context).colorScheme.error,
-            margin: Theme.of(context).cardTheme.margin,
+            margin: Theme.of(context).cardTheme.margin ,
           ),
           onDismissed: (direction) {
             onRemoveExpense(expenses[index]);
