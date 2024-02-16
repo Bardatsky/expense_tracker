@@ -37,5 +37,10 @@ class Expense {
   String get formatedDate {
     return formatter.format(date);
   }
+}
 
+class ExpenseBucket {
+  const ExpenseBucket({required this.category, required this.expense});
+  final Category category;
+  final List<Expense> expense;
 }
